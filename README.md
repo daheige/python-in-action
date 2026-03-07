@@ -65,9 +65,11 @@ source .venv/bin/activate
 ```
 
 # python 教程
-https://docs.python.org/zh-cn/3.13/tutorial/index.html
-
-https://docs.python.org/zh-cn/3.13/tutorial/introduction.html
+推荐书籍：
+- 基础入门《Python基础教程（第3版·修订版）（图灵出品）》 作为基础知识入门即可
+- python运维自动化：《Python自动化运维快速入门（第2版）》
+- https://docs.python.org/zh-cn/3.13/tutorial/index.html
+- https://docs.python.org/zh-cn/3.13/tutorial/introduction.html
 
 # python 标准库
 https://docs.python.org/zh-cn/3.13/library/index.html#library-index
