@@ -37,6 +37,12 @@ pip3 install --break-system-packages package_name
 ```
 
 # uv工具安装
+uv 的优势
+- 速度极快：由于使用 Rust 编写，uv 的性能远超 pip 和其他包管理工具，安装依赖的速度可以提升 10-100 倍。
+- 功能集成：集成语法分析、依赖解析、包安装、环境管理和 Python 版本管理于一体，无需再安装和学习多个工具。
+- 确定性构建：uv 会生成 uv.lock 文件，确保在任何环境中都能安装完全相同的依赖版本，避免 "在我机器上能运行" 的问题。
+- 与现有工具兼容：uv 可以处理 requirements.txt 和 pyproject.toml，可以无缝替代现有工作流中的 pip。
+
 ```shell
 pip install uv
 ```
@@ -45,6 +51,18 @@ pip install uv
 uv pip install redis
 ```
 uv使用文档：https://www.runoob.com/python3/uv-tutorial.html
+
+# 通过uv 创建虚拟环境
+```shell
+# 创建名为 .venv 的虚拟环境（默认）
+uv venv
+
+# 激活环境（macOS/Linux）
+source .venv/bin/activate
+
+# 激活环境（Windows）
+.venv\Scripts\activate
+```
 
 # python 教程
 https://docs.python.org/zh-cn/3.13/tutorial/index.html
