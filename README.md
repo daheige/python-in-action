@@ -68,6 +68,7 @@ source .venv/bin/activate
 推荐书籍：
 - 基础入门《Python基础教程（第3版·修订版）（图灵出品）》 作为基础知识入门即可
 - python运维自动化：《Python自动化运维快速入门（第2版）》
+- ai agent开发：《AI Agent开发实战：从基础原理到企业级应用》，同时推荐《AI工程》掌握ai相关的基础知识
 - https://docs.python.org/zh-cn/3.13/tutorial/index.html
 - https://docs.python.org/zh-cn/3.13/tutorial/introduction.html
 
