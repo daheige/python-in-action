@@ -26,15 +26,7 @@ pip3 install --break-system-packages package_name
 ```
 
 # vscode 设置python格式化
-```json
-{
-  "[python]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "charliermarsh.ruff"
-  }
-}
-```
-或者使用auto
+推荐使用autopep8
 ```json
 {
   "[python]": {
@@ -52,6 +44,7 @@ pip install uv
 ```shell
 uv pip install redis
 ```
+uv使用文档：https://www.runoob.com/python3/uv-tutorial.html
 
 # python 教程
 https://docs.python.org/zh-cn/3.13/tutorial/index.html
