@@ -1,11 +1,17 @@
+import json
+from typing import Any
 
 import redis
-import json
-from typing import Any, Optional, List, Dict
 
 
 class RedisClient:
-    def __init__(self, host: str = 'localhost', port: int = 6379, db: int = 0, password: Optional[str] = None):
+    def __init__(
+        self,
+        host: str = "localhost",
+        port: int = 6379,
+        db: int = 0,
+        password: str | None = None,
+    ):
         """
         初始化Redis连接
         :param host: Redis服务器地址
@@ -18,13 +24,13 @@ class RedisClient:
             port=port,
             db=db,
             password=password,
-            decode_responses=True  # 自动解码响应为字符串
+            decode_responses=True,  # 自动解码响应为字符串
         )
 
     def get_client(self) -> Any:
         return self.client
 
-    def set(self, key: str, value: Any, expire: Optional[int] = None) -> bool:
+    def set(self, key: str, value: Any, expire: int | None = None) -> bool:
         """
         设置键值对
         :param key: 键
@@ -33,14 +39,15 @@ class RedisClient:
         :return: 是否设置成功
         """
         try:
-            serialized_value = json.dumps(value) if isinstance(
-                value, (dict, list)) else str(value)
+            serialized_value = (
+                json.dumps(value) if isinstance(value, (dict, list)) else str(value)
+            )
             return self.client.set(key, serialized_value, ex=expire)
         except Exception as e:
             print(f"设置键值失败: {e}")
             return False
 
-    def get(self, key: str) -> Optional[Any]:
+    def get(self, key: str) -> Any | None:
         """
         获取键对应的值
         :param key: 键
@@ -69,8 +76,9 @@ class RedisClient:
         :return: 是否设置成功
         """
         try:
-            serialized_value = json.dumps(value) if isinstance(
-                value, (dict, list)) else str(value)
+            serialized_value = (
+                json.dumps(value) if isinstance(value, (dict, list)) else str(value)
+            )
             return self.client.setex(key, expire, serialized_value)
         except Exception as e:
             print(f"设置键值失败: {e}")
@@ -121,14 +129,15 @@ class RedisClient:
         :return: 是否设置成功
         """
         try:
-            serialized_value = json.dumps(value) if isinstance(
-                value, (dict, list)) else str(value)
+            serialized_value = (
+                json.dumps(value) if isinstance(value, (dict, list)) else str(value)
+            )
             return self.client.hset(key, field, serialized_value)
         except Exception as e:
             print(f"设置键值失败: {e}")
             return False
 
-    def hmset(self, name: str, mapping: Dict[str, Any]) -> bool:
+    def hmset(self, name: str, mapping: dict[str, Any]) -> bool:
         """
         批量设置哈希表
         :param name: 哈希表名称
@@ -138,8 +147,9 @@ class RedisClient:
         try:
             pipe = self.client.pipeline()
             for field, value in mapping.items():
-                serialized_value = json.dumps(value) if isinstance(
-                    value, (dict, list)) else str(value)
+                serialized_value = (
+                    json.dumps(value) if isinstance(value, (dict, list)) else str(value)
+                )
                 pipe.hset(name, field, serialized_value)
             pipe.execute()
             return True
@@ -147,7 +157,7 @@ class RedisClient:
             print(f"设置哈希表失败: {e}")
             return False
 
-    def hget(self, key: str, field: str) -> Optional[Any]:
+    def hget(self, key: str, field: str) -> Any | None:
         """
         获取哈希键对应的值
         :param key: 键
@@ -163,7 +173,7 @@ class RedisClient:
             print(f"获取键值失败: {e}")
             return None
 
-    def hgetall(self, name: str) -> Dict[str, Any]:
+    def hgetall(self, name: str) -> dict[str, Any]:
         """
         获取哈希表所有字段和值
         :param name: 哈希表名称
@@ -194,8 +204,7 @@ class RedisClient:
             serialized_values = []
             for value in values:
                 serialized_values.append(
-                    json.dumps(value) if isinstance(
-                        value, (dict, list)) else str(value)
+                    json.dumps(value) if isinstance(value, (dict, list)) else str(value)
                 )
 
             if left:
@@ -206,7 +215,7 @@ class RedisClient:
             print(f"推入列表失败: {e}")
             return 0
 
-    def pop(self, name: str, left: bool = True) -> Optional[Any]:
+    def pop(self, name: str, left: bool = True) -> Any | None:
         """
         从列表弹出元素
         :param name: 列表名称
@@ -230,7 +239,7 @@ class RedisClient:
             print(f"弹出列表失败: {e}")
             return None
 
-    def lrange(self, name: str, start: int = 0, end: int = -1) -> List[Any]:
+    def lrange(self, name: str, start: int = 0, end: int = -1) -> list[Any]:
         """
         获取列表范围内的元素
         :param name: 列表名称
@@ -262,8 +271,9 @@ class RedisClient:
             serialized_members = []
             for member in members:
                 serialized_members.append(
-                    json.dumps(member) if isinstance(
-                        member, (dict, list)) else str(member)
+                    json.dumps(member)
+                    if isinstance(member, (dict, list))
+                    else str(member)
                 )
             return self.client.sadd(name, *serialized_members)
         except Exception as e:

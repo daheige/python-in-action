@@ -95,18 +95,18 @@ print(n)
 # 如果 format 要求一个单独参数，则 values 可以为一个非元组对象。
 # 否则的话，values 必须或者是一个包含项数与格式字符串中指定的转换符项数相同的元组，
 # 或者是一个单独映射对象（例如字典）
-print('%s has %d quote types.' % ('Python', 2))
+print("%s has %d quote types." % ("Python", 2))
 
 # str.format 方法用法
-'''
+"""
 执行字符串格式化操作。 调用此方法的字符串可以包含文本字面值或者以花括号 {} 标明的替换字段。 
 每个替换字段可以包含一个位置参数的数字索引，或是一个关键字参数的名称。 
 返回的字符串副本中每个替换字段都会被替换为对应参数的字符串值。
-'''
+"""
 
-x = "The sum of 1 + 2 is {0}".format(1+2)
-y = "The sum of {a} + {b} is {answer}".format(answer=1+2, a=1, b=2)
-z = "{1} expects the {0} Inquisition!".format("Spanish", "Nobody")
+x = f"The sum of 1 + 2 is {1 + 2}"
+y = f"The sum of {1} + {2} is {1 + 2}"
+z = "{} expects the {} Inquisition!".format("Nobody", "Spanish")
 print(x)
 print(y)
 print(z)

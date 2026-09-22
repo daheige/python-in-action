@@ -32,16 +32,16 @@ correct_rgba = rgba[:]  # 浅拷贝，不会改变原有的切片rgba
 correct_rgba[-1] = "Alpha"
 print("correct_rgba", correct_rgba)
 print("rgba", rgba)
-letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+letters = ["a", "b", "c", "d", "e", "f", "g"]
 
 # 改变切片大小
 print("letters", letters)
-['a', 'b', 'c', 'd', 'e', 'f', 'g']
-letters[2:5] = ['C', 'D', 'E']
+# ["a", "b", "c", "d", "e", "f", "g"]
+letters[2:5] = ["C", "D", "E"]
 letters[2:5] = []  # 这里是清空下标从2-5元素的值
 print("letters", letters)
 
-letters = ['a', 'b', 'c', 'd']
+letters = ["a", "b", "c", "d"]
 print("letters.len=", len(letters))
 
 # 通过用一个空列表替代所有元素来清空列表
