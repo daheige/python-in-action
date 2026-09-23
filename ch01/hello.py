@@ -7,8 +7,15 @@ if x:
 
 print("hello")
 
+# 单行注释
+
+# 多行注释风格
 """
 多行注释
+"""
+
+"""
+以下内容是python基本数据类型
 """
 
 # 单行注释
@@ -59,6 +66,7 @@ Usage: thingy [OPTIONS]
      -H hostname               Hostname to connect to
 """)
 
+# 字符串重复，以及字符串拼接
 # 3 乘以 'un'，再加 'ium'
 y = 3 * "un" + "ium"
 print(y)
@@ -95,7 +103,7 @@ print(n)
 # 如果 format 要求一个单独参数，则 values 可以为一个非元组对象。
 # 否则的话，values 必须或者是一个包含项数与格式字符串中指定的转换符项数相同的元组，
 # 或者是一个单独映射对象（例如字典）
-print("%s has %d quote types." % ("Python", 2))
+print("%s has %d quote types." % ("Python", 2))  # noqa: UP031
 
 # str.format 方法用法
 """
