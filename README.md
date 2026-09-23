@@ -1,6 +1,19 @@
 # python-in-action
 python in action
 
+# python 教程
+- 书籍：Python编程从入门到实践第3版 pdf网上可下载
+- 配套教程：https://www.bilibili.com/video/BV1nqgY6pEuf
+- 官方教程：https://docs.python.org/zh-cn/3.14/tutorial/index.html
+
+关于python安装，参考：https://www.python.org/
+
+# python 标准库
+https://docs.python.org/zh-cn/3.14/library/index.html#library-index
+
+# python 参考手册
+https://docs.python.org/zh-cn/3.14/reference/index.html#reference-index
+
 # python 虚拟环境
 创建并激活一个虚拟环境，可以避免直接修改系统 Python 环境
 ```shell
@@ -136,14 +149,3 @@ echo $VIRTUAL_ENV   # 有输出说明在虚拟环境中
 # 退出虚拟环境
 deactivate
 ```
-
-# python 教程
-- 书籍：Python编程从入门到实践第3版 pdf网上可下载
-- 配套教程：https://www.bilibili.com/video/BV1nqgY6pEuf
-- 官方教程：https://docs.python.org/zh-cn/3.14/tutorial/index.html
-
-# python 标准库
-https://docs.python.org/zh-cn/3.13/library/index.html#library-index
-
-# python 参考手册
-https://docs.python.org/zh-cn/3.13/reference/index.html#reference-index
