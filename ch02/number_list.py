@@ -36,6 +36,7 @@ print(f"max:{max(digits)}")  # 输出最大值
 print(f"sum:{sum(digits)}")  # 输出总和
 
 # 列表推导式
+# 列表推导式创建列表的方式更简洁
 # 列表推导式（list comprehension）
 # 将 for 循环和创建新元素的代码合并成⼀⾏，并⾃动追加新元素
 s = [val**2 for val in range(1, 10)]  # 生成1-9的平方列表

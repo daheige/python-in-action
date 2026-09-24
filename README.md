@@ -2,9 +2,10 @@
 python in action
 
 # python 教程
+基本上1个月左右就可以学习python基础，可根据实际情况，安排时间。
 - 书籍：Python编程从入门到实践第3版 pdf网上可下载
-- 配套教程：https://www.bilibili.com/video/BV1nqgY6pEuf
-- 官方教程：https://docs.python.org/zh-cn/3.14/tutorial/index.html
+- 配套教程：https://www.bilibili.com/video/BV1nqgY6pEuf 入门到实践
+- 官方教程：https://docs.python.org/zh-cn/3.14/tutorial/index.html 基础入门看这个即可
 
 关于python安装，参考：https://www.python.org/
 

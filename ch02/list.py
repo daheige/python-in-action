@@ -1,3 +1,5 @@
+from collections import deque
+
 bicycles = ["trek", "cannondale", "redline"]  # 定义列表
 print("bicycles:", bicycles)
 
@@ -76,3 +78,15 @@ cars = ["bmw", "audi", "toyota", "subaru"]
 cars.reverse()  # 反向打印列表
 print("reverse cars:", cars)
 print("len cars:", len(cars))
+
+# list中元素出现的次数
+s = ["a", "b", "a", "test", "b"]
+print(s.count("a"))
+
+# 使用列表实现队列
+q = deque(["a", "b", "c"])
+q.append("d")
+q.append("e")
+first = q.popleft()
+print(first)
+print(q)

@@ -1,5 +1,5 @@
 d = (12, 100)
-# 元素的元素不可变
+# 元组的元素是 immutable （不可变的）
 # d[0] = 1 # TypeError: 'tuple' object does not support item assignment
 print(d)
 

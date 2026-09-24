@@ -23,3 +23,9 @@ def say_hello(name: str) -> str:
 
 
 print(say_hello("Alice"))
+
+a = True
+b = False
+
+c = a or b
+print(c)

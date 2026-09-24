@@ -1,5 +1,6 @@
 #!/usr/bin/local/bin/python3
 # 指定文件编码
+# 格式：-*- coding: encoding -*- 默认情况下，Python 源码文件的编码是 UTF-8
 # -*- coding: utf-8 -*-
 x = True
 if x:
