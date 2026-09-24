@@ -1,3 +1,18 @@
+# list 列表
+列表（list）由⼀系列按特定顺序排列的元素组成。你不仅可以创建包含字⺟表中所有字⺟、数字 0〜9 或所有家庭成员姓名的列表，还可以将任何东⻄加⼊列表，其中的元素之间可以没有任何关系。列表通常包含多个元素，因此给列表指定⼀个表⽰复数的名称（如 letters、digits 或 names）是个不错的主意。
+
+在 Python 中，⽤⽅括号（[]）表⽰列表，⽤逗号分隔其中的元素
+
+```python
+bicycles = ["trek","cannondale","redline"]
+print(bicycles)
+```
+
+# del 和 pop 选择
+如果要从列表中删除⼀个元素，且不再以任何⽅式使⽤它，就使⽤ del 语句；如果要在删除元素后继续使⽤它，就使⽤ pop() ⽅法。
+
+# list 基本操作
+```python
 squares = [1, 4, 9, 16, 25]
 print("squares:", squares)
 
@@ -47,3 +62,16 @@ print("letters.len=", len(letters))
 # 通过用一个空列表替代所有元素来清空列表
 letters[:] = []
 print("letters", letters)
+```
+
+# 索引不存在的错误
+```ini
+motorcycles = ['honda', 'yamaha', 'suzuki']
+>>> motorcycles[4]
+Traceback (most recent call last):
+  File "<python-input-8>", line 1, in <module>
+    motorcycles[4]
+    ~~~~~~~~~~~^^^
+IndexError: list index out of range
+>>>
+```

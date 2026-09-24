@@ -1,3 +1,6 @@
+message = "Hello, World!"
+print(message)
+
 cat = "tom"
 print(f"cat:{cat}")
 
