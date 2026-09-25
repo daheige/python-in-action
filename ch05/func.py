@@ -1,3 +1,93 @@
+# 定义没有参数的函数
+# 通过三个引号注释函数
+# 使⽤关键字 def 定义函数
+def greet():
+    """
+    show simple greeter
+    """
+    print("hello,world")
+
+
+greet()
+
+
+# 实参和形参
+# name 是形参
+# 在调用函数的实际参数是实参
+# name 是一个字符串
+def greet_user(name: str):
+    """
+    show simple greeter
+    """
+    print(f"hello,{name}")
+
+
+greet_user("daheige")
+greet_user("alex")
+
+
+# 定义函数可以给参数指定默认值
+def hello(name="world"):
+    print(f"hello,{name}")
+
+
+hello()
+
+
+# 函数返回值
+def upper(name: str):
+    return name.upper()
+
+
+print(upper("daheige"))  # DAHEIGE
+
+
+def build_person(first_name, last_name):
+    """返回一个字典，其中包含个人信息"""
+    person = {
+        "first": first_name,
+        "last": last_name,
+    }
+    return person
+
+
+print(build_person("da", "heige"))
+
+
+def greet_names(names: list):
+    for name in names:
+        msg = f"hello,{name.title()}"
+        print(msg)
+
+
+greet_names(["alex", "daheige"])
+
+
+# 传递任意数量的实参
+# 在函数定义前面加上*
+def make_pizza(*toppings):
+    print(toppings)
+
+
+make_pizza("m", "n", "x", "y")  # ('m', 'n', 'x', 'y') 本质上toppings是一个元组
+
+# 任意参数只能放在最后
+"""
+如果要让函数接受不同类型的实参，必须在函数定义中将接纳任意数量实
+参的形参放在最后。Python 先匹配位置实参和关键字实参，再将余下的实
+参都收集到最后⼀个形参中
+"""
+
+
+def make_pizza2(size, *toppings):
+    print(f"\nMaking a {size}-inch pizza with the following toppings:")
+    for t in toppings:
+        print(f"- {t}")
+
+
+make_pizza2(12, "x", "y", "z")
+
+
 # 函数定义时，可以给默认参数
 def ask_ok(prompt, retries=4, reminder="please try again"):
     while True:
@@ -46,6 +136,10 @@ print(f(3))
 
 
 # 关键字参数
+# 关键字实参是传递给函数的名值对。这样会直接在实参中将名称和值关联起来
+# 关键字实参不仅让你⽆须考虑函数调⽤中的实参顺
+# 序，⽽且清楚地指出了函数调⽤中各个值的⽤途
+#
 # kwarg=value 形式的 关键字参数 也可以用于调用函数。函数示例如下
 # 其实就是给参数命名
 def parrot(voltage, state="a stiff", action="voom", type="Norwegian Blue"):
