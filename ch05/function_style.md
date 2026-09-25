@@ -29,7 +29,3 @@ def function_name(parameter_0, parameter_1='default value')
 ```python
 function_name(value_0, parameter_1='value')
 ```
-
-# 关于import
-所有的 import 语句都应放在⽂件开头。唯⼀的例外是，你要在⽂件开头
-使⽤注释来描述整个程序。
