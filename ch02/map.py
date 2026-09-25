@@ -18,6 +18,8 @@ print(h.get("c", "no value"))  # no value输出默认值
 h["c"] = 1
 print(h)
 
+print("a in h:", "a" in h)
+
 # 删除map中的元素
 del h["a"]
 print(h)

@@ -38,6 +38,7 @@ if toppings:
 else:
     print("are you sure you want others")
 
+# while循环
 a, b = 0, 1
 # 斐波那契数列：
 # 前两项之和即下一项的值
@@ -46,6 +47,11 @@ while a < 10:
     a, b = b, a + b
 
 print("a,b=", a, b)
+
+n = 1
+while n <= 5:
+    print("current n is:", n)
+    n += 1
 
 """
 Python 和 C 一样，任何非零整数都为真，零为假。
