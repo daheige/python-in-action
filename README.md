@@ -127,6 +127,9 @@ pip3 install uv --break-system-packages
 ```
 后续就可以通过uv工具来安装对应的python包
 ```shell
+# uv pip 默认只往虚拟环境里装包
+cd your_project
+uv venv
 uv pip install redis
 ```
 uv使用文档：https://www.runoob.com/python3/uv-tutorial.html
