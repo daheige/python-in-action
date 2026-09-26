@@ -1,4 +1,6 @@
 # python 语言标准库
+https://docs.python.org/zh-cn/3.14/tutorial/stdlib.html
+
 python 语言内置了 `os`,`sys`,`pathlib`等标准库，用于快速开发程序。
 
 # os 操作系统接口
