@@ -60,3 +60,14 @@ log.critical("crit error")
 
 日志系统可以直接从 Python 配置，也可以从用户配置文件加载，以便自定义日志记录而无需更改应用程序。
 
+# 定制模块
+Python 提供了两个钩子供你进行自定义: sitecustomize 和 usercustomize。 要了解它是如何工作的，首先需要找到用户 site-packages 目录的位置。 启动 Python 并运行以下代码:
+```python
+import site
+site.getusersitepackages()
+```
+现在，您可以在该目录中创建一个名为 usercustomize.py 的文件，并将所需内容放入其中。它会影响 Python 的每次启动，除非它以 -s 选项启动，以禁用自动导入。
+
+sitecustomize 的工作方式相同，但通常由计算机管理员在全局 site-packages 目录中创建，并在 usercustomize 之前导入。 
+
+当然我们也可以使用rust语言为python编写拓展模块。

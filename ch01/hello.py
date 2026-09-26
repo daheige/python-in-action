@@ -119,3 +119,6 @@ z = "{} expects the {} Inquisition!".format("Nobody", "Spanish")
 print(x)
 print(y)
 print(z)
+
+# 想要更美观的输出，你可能会希望使用字符串格式化来产生限定长度的有效位数
+print(format(12.2345679, ".2f"))  # 12.23 保留2位小数
