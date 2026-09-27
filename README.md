@@ -153,3 +153,74 @@ echo $VIRTUAL_ENV   # 有输出说明在虚拟环境中
 # 退出虚拟环境
 deactivate
 ```
+
+# uv 常用命令使用
+用 uv 查看已安装的包
+```shell
+uv pip list          # 列出当前环境所有已安装的包
+```
+
+查看已安装的包相关命令
+```shell
+# 查看某个包的具体信息（版本、位置、依赖）
+uv pip show langchain
+
+# 在特定目录/项目环境下查看
+uv pip list --project /path/to/project
+
+# 通过 Python 解释器指定环境
+uv pip list --python /path/to/venv/bin/python
+
+uv pip list --outdated      # 查看哪些包有新版本（outdated）
+uv tree                      # 查看依赖树（uv 从 pyproject.toml 解析出的）
+```
+
+项目管理（推荐方式，基于 pyproject.toml）
+```shell
+uv init my-project          # 新建项目
+uv add requests             # 添加依赖（自动写入 pyproject.toml 并安装）
+uv add "langchain<0.1"      # 添加指定版本
+uv add --dev pytest         # 添加开发依赖
+uv remove requests          # 移除依赖
+uv sync                     # 按 lock 文件安装全部依赖
+uv lock                     # 生成/更新 uv.lock
+uv run python main.py       # 在虚拟环境中运行脚本（自动处理环境）
+uv run pytest               # 运行项目内命令
+```
+pip 风格命令（操作现有环境）
+```shell
+uv pip install requests             # 安装包
+uv pip install -r requirements.txt  # 从 requirements.txt 安装
+uv pip uninstall requests           # 卸载
+uv pip list                         # 列出已安装包
+uv pip show langchain               # 查看包详情
+uv pip freeze >> requirements.txt   # 导出 requirements 格式
+uv pip check                        # 检查依赖冲突
+```
+虚拟环境
+```shell
+uv venv                     # 创建 .venv
+uv venv myenv --python 3.11 # 指定 Python 版本创建
+source .venv/bin/activate   # 激活（Linux/macOS）
+.venv\Scripts\activate      # 激活（Windows）
+```
+Python 版本管理
+```shell
+uv python install 3.11      # 安装某个 Python 版本
+uv python list              # 列出可用/已装的 Python
+uv python pin 3.11          # 固定项目 Python 版本
+```
+工具运行（临时用，不污染环境）
+```shell
+uvx ruff check .            # 临时运行工具（等价 uv tool run）
+uvx black main.py
+uv tool install ruff        # 全局安装 CLI 工具
+```
+其他命令
+```shell
+uv cache clean              # 清理缓存
+uv self update              # 升级 uv 本身
+uv build                    # 构建 wheel/sdist
+uv publish                  # 发布到 PyPI
+```
+日常使用最顺手的组合：uv init → uv add xxx → uv run xxx.py，基本不用手动管虚拟环境。
